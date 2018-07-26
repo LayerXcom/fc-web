@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import { Layout, Menu, Icon } from 'antd'
 
 const { Sider } = Layout
-const SubMenu = Menu.SubMenu
 
 class Sidebar extends React.Component {
   state = {
@@ -14,47 +13,36 @@ class Sidebar extends React.Component {
     return (
       <Sider collapsible="collapsible" collapsed={this.state.sidebarCollapsed}>
         <div className="logo" />
-        <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
+        <Menu theme="dark" mode="inline">
           <Menu.Item key="1">
-            <Icon type="pie-chart" />
-            <span>
-              <Link to="/hoge">Option 1</Link>
-            </span>
+            <Link to="/hoge">
+              <Icon type="pie-chart" />
+              <span>Crawl</span>
+            </Link>
           </Menu.Item>
           <Menu.Item key="2">
             <Icon type="desktop" />
-            <span>Option 2</span>
+            <span>Vote</span>
           </Menu.Item>
-          <SubMenu
-            key="sub1"
-            title={
-              <span>
-                {' '}
-                <Icon type="user" />
-                <span> User</span>
-              </span>
-            }
-          >
-            <Menu.Item key="3">Tom</Menu.Item>
-            <Menu.Item key="4">Bill</Menu.Item>
-            <Menu.Item key="5">Alex</Menu.Item>
-          </SubMenu>
-          <SubMenu
-            key="sub2"
-            title={
-              <span>
-                {' '}
-                <Icon type="team" />
-                <span> Team</span>
-              </span>
-            }
-          >
-            <Menu.Item key="6">Team 1</Menu.Item>
-            <Menu.Item key="8">Team 2</Menu.Item>
-          </SubMenu>
-          <Menu.Item key="9">
-            <Icon type="file" />
-            <span>File</span>
+          <Menu.Item key="3">
+            <Icon type="desktop" />
+            <span>Factcheck</span>
+          </Menu.Item>
+          <Menu.Item key="4">
+            <Icon type="desktop" />
+            <span>Stats</span>
+          </Menu.Item>
+          <Menu.Item key="5">
+            <Icon type="github" />
+            <span>
+              <a
+                rel="noopener noreferrer"
+                target="_blank"
+                href="https://github.com/factchain"
+              >
+                Github
+              </a>
+            </span>
           </Menu.Item>
         </Menu>
       </Sider>

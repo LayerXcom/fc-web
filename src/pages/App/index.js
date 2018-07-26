@@ -3,12 +3,18 @@ import { Layout, Breadcrumb } from 'antd'
 import { connect } from 'react-redux'
 
 import './index.css'
+import { getBalance } from '../../actions/web3'
 import Sidebar from '../../components/Sidebar'
 import Footer from '../../components/Footer'
 
 const { Content } = Layout
 
 class App extends Component {
+  componentDidMount() {
+    const { dispatch } = this.props
+    dispatch(getBalance())
+  }
+
   render() {
     return (
       <Layout
