@@ -8,7 +8,7 @@ import thunk from 'redux-thunk';
 import { createBrowserHistory } from 'history';
 import { ConnectedRouter, connectRouter, routerMiddleware } from 'connected-react-router';
 import './index.css';
-import App from './containers/App';
+import App from './pages/App';
 import registerServiceWorker from './registerServiceWorker';
 import reducers from './reducers';
 
