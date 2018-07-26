@@ -1,0 +1,14 @@
+parser: babel-eslint
+plugins:
+  - prettier
+extends:
+  - prettier
+  - prettier/flowtype
+  - prettier/react
+rules:
+  prettier/prettier:
+    - 2
+    -
+      trailingComma: none
+      singleQuote: true
+      semi: false
