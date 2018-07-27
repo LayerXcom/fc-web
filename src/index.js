@@ -15,6 +15,7 @@ import './index.css'
 import App from './pages/App'
 import registerServiceWorker from './registerServiceWorker'
 import reducers from './reducers'
+import Auth from './containers/Auth'
 
 const history = createBrowserHistory()
 
@@ -33,12 +34,14 @@ ReactDOM.render(
   <Provider store={store}>
     <ConnectedRouter history={history}>
       <Switch>
-        <Route exact path="/hoge">
-          <span>hoge</span>
+        <Route exact path="/login">
+          <span> Please setup Metamask!!</span>
         </Route>
-        <Route path="/">
-          <App />
-        </Route>
+        <Auth>
+          <Route path="/">
+            <App />
+          </Route>
+        </Auth>
       </Switch>
     </ConnectedRouter>
   </Provider>,
