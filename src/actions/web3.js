@@ -1,4 +1,4 @@
-import web3, { getDefaultAccount } from '../utils/web3'
+import web3, { getDefaultAccount, getNetworkType } from '../utils/web3'
 
 function web3GetBalance(balance) {
   return {
@@ -15,17 +15,18 @@ function web3Error(action, error) {
   }
 }
 
-function web3getDefaultAccount(account) {
+function web3getDefaultAccount(account, network) {
   return {
     type: 'web3/getDefaultAccount',
-    account
+    account,
+    network
   }
 }
 
 export function loadDefaultAccount() {
   return function(dispatch) {
-    return getDefaultAccount().then(
-      ac => dispatch(web3getDefaultAccount(ac)),
+    return Promise.all([getDefaultAccount(), getNetworkType()]).then(
+      result => dispatch(web3getDefaultAccount(result[0], result[1])),
       err => dispatch(web3Error('web3/getDefaultAccount', err))
     )
   }

@@ -11,17 +11,16 @@ class Auth extends Component {
   }
 
   componentDidMount() {
-    const { dispatch } = this.props
-    dispatch(loadDefaultAccount())
+    const { initialized, dispatch } = this.props
+    if (!initialized) {
+      dispatch(loadDefaultAccount())
+    }
   }
 
   render() {
-    const { initialized, logined } = this.props
-    if (initialized && !logined) {
-      return <Redirect to={'/login'} />
-    }
-    if (initialized) {
-      return <div> {this.props.children} </div>
+    const { logined } = this.props
+    if (logined) {
+      return <Redirect to={'/'} />
     }
     return (
       <div
@@ -30,7 +29,7 @@ class Auth extends Component {
           minHeight: 360
         }}
       >
-        Loading...
+        <span> Please setup Metamask & Use local network!!</span>
       </div>
     )
   }

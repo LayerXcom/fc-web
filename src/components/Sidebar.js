@@ -14,23 +14,35 @@ class Sidebar extends React.Component {
       <Sider collapsible="collapsible" collapsed={this.state.sidebarCollapsed}>
         <div className="logo" />
         <Menu theme="dark" mode="inline">
+          <Menu.Item key="0">
+            <Link to="/">
+              <Icon type="home" />
+              <span>Home</span>
+            </Link>
+          </Menu.Item>
           <Menu.Item key="1">
-            <Link to="/hoge">
-              <Icon type="pie-chart" />
+            <Link to="/crawl">
+              <Icon type="file-text" />
               <span>Crawl</span>
             </Link>
           </Menu.Item>
           <Menu.Item key="2">
-            <Icon type="desktop" />
-            <span>Vote</span>
+            <Link to="/vote">
+              <Icon type="tags-o" />
+              <span>Vote</span>
+            </Link>
           </Menu.Item>
           <Menu.Item key="3">
-            <Icon type="desktop" />
-            <span>Factcheck</span>
+            <Link to="/factcheck">
+              <Icon type="form" />
+              <span>Factcheck</span>
+            </Link>
           </Menu.Item>
           <Menu.Item key="4">
-            <Icon type="desktop" />
-            <span>Stats</span>
+            <Link to="/stats">
+              <Icon type="pie-chart" />
+              <span>Stats</span>
+            </Link>
           </Menu.Item>
           <Menu.Item key="5">
             <Icon type="github" />

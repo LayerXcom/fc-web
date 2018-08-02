@@ -29,6 +29,10 @@ export function getDefaultAccount() {
   return web3.eth.getAccounts().then(ac => ac[0])
 }
 
+export function getNetworkType() {
+  return web3.eth.net.getNetworkType()
+}
+
 // Export web3 object instance
 const web3ForExport = web3 // To avoid error from exporting non-read-only variable
 export default web3ForExport

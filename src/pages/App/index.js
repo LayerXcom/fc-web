@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Layout, Breadcrumb } from 'antd'
+import { Layout } from 'antd'
 import { connect } from 'react-redux'
 
 import './index.css'
@@ -24,14 +24,6 @@ class App extends Component {
               margin: '0 16px'
             }}
           >
-            <Breadcrumb
-              style={{
-                margin: '16px 0'
-              }}
-            >
-              <Breadcrumb.Item>User</Breadcrumb.Item>
-              <Breadcrumb.Item>Bill</Breadcrumb.Item>
-            </Breadcrumb>
             <Crawl />
           </Content>
           <Footer />
@@ -42,7 +34,7 @@ class App extends Component {
 }
 
 function mapStateToProps(state) {
-  return state
+  return {}
 }
 
 export default connect(mapStateToProps)(App)

@@ -16,11 +16,15 @@ import App from './pages/App'
 import registerServiceWorker from './registerServiceWorker'
 import reducers from './reducers'
 import Auth from './containers/Auth'
+import Login from './containers/Login'
 
 const history = createBrowserHistory()
 
 const store = createStore(
   connectRouter(history)(reducers),
+  {
+    initialized: false
+  },
   compose(
     applyMiddleware(
       routerMiddleware(history), // for dispatching history actions.
@@ -35,7 +39,7 @@ ReactDOM.render(
     <ConnectedRouter history={history}>
       <Switch>
         <Route exact path="/login">
-          <span> Please setup Metamask!!</span>
+          <Login />
         </Route>
         <Auth>
           <Route path="/">
