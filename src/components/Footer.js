@@ -11,7 +11,7 @@ class MyFooter extends React.Component {
           textAlign: 'center'
         }}
       >
-        Ant Design ©2016 Created by Ant UED
+        Factchain ©2018 Created by Factchain team.
       </Footer>
     )
   }
