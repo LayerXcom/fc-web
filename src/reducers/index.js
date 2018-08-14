@@ -1,9 +1,12 @@
-const initialState = {
-  balance: 0
-}
-
-export default function reducer(state = initialState, action) {
+export default function reducer(state, action) {
   switch (action.type) {
+    case 'ADD_URL':
+      const url = action.payload.url;
+      const urlList = state.urlList.slice(0);
+      urlList.push(url);
+      const newState = Object.assign({}, state);
+      newState.urlList = urlList;
+      return newState;
     case 'web3/getBalance':
       return { ...state, balance: action.balance }
     case 'web3/getDefaultAccount':

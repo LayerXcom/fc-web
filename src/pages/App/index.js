@@ -6,6 +6,11 @@ import './index.css'
 import Sidebar from '../../components/Sidebar'
 import Footer from '../../components/Footer'
 import Crawl from '../../containers/Crawl'
+import Vote from '../../containers/Vote'
+import Factcheck from '../../containers/Factcheck'
+import Stats from '../../containers/Stats'
+import { BrowserRouter as Router, Route, Switch, withRouter } from 'react-router-dom'
+
 
 const { Content } = Layout
 
@@ -24,7 +29,12 @@ class App extends Component {
               margin: '0 16px'
             }}
           >
-            <Crawl />
+            <Switch>
+                <Route path='/crawl' exact component={Crawl} />
+                <Route path='/vote' exact component={Vote} />
+                <Route path='/factcheck' exact component={Factcheck} />
+                <Route path='/stats' exact component={Stats}/>
+            </Switch>
           </Content>
           <Footer />
         </Layout>
@@ -37,4 +47,4 @@ function mapStateToProps(state) {
   return {}
 }
 
-export default connect(mapStateToProps)(App)
+export default withRouter(connect(mapStateToProps)(App))

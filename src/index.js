@@ -20,11 +20,15 @@ import Login from './containers/Login'
 
 const history = createBrowserHistory()
 
+const initialState = {
+  balance: 0,
+  urlList: [],
+  initialized: false
+}
+
 const store = createStore(
   connectRouter(history)(reducers),
-  {
-    initialized: false
-  },
+  initialState,
   compose(
     applyMiddleware(
       routerMiddleware(history), // for dispatching history actions.
