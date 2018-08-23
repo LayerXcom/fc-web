@@ -1,0 +1,26 @@
+#crawl-list {
+  margin: 24px;
+  float: left;
+  width: 40%;
+}
+
+#big-title {
+  font-size:30px;
+}
+
+#small-title {
+  font-size:20px;
+}
+
+#wide-size {
+  width: 80%;
+  margin-bottom: 24px;
+}
+
+#submitButton {
+  float: right;
+}
+
+#url {
+  font-size: 20px;
+}

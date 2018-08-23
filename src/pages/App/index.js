@@ -9,7 +9,8 @@ import Crawl from '../../containers/Crawl'
 import Vote from '../../containers/Vote'
 import Factcheck from '../../containers/Factcheck'
 import Stats from '../../containers/Stats'
-import { BrowserRouter as Router, Route, Switch, withRouter } from 'react-router-dom'
+import UserHome from '../../containers/UserHome'
+import { Route, Switch, withRouter } from 'react-router-dom'
 
 
 const { Content } = Layout
@@ -30,6 +31,7 @@ class App extends Component {
             }}
           >
             <Switch>
+                <Route path='/' exact component={UserHome} />
                 <Route path='/crawl' exact component={Crawl} />
                 <Route path='/vote' exact component={Vote} />
                 <Route path='/factcheck' exact component={Factcheck} />

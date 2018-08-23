@@ -1,12 +1,16 @@
 export default function reducer(state, action) {
   switch (action.type) {
     case 'ADD_URL':
-      const url = action.payload.url;
+      const url = action.payload.url
       const urlList = state.urlList.slice(0);
       urlList.push(url);
       const newState = Object.assign({}, state);
       newState.urlList = urlList;
       return newState;
+    case 'SUBMITTING_URL':
+      const newnewState = Object.assign({}, state);
+      newnewState.submittingUrl = action.payload.url;
+      return newnewState;
     case 'web3/getBalance':
       return { ...state, balance: action.balance }
     case 'web3/getDefaultAccount':

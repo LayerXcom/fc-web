@@ -22,7 +22,9 @@ const history = createBrowserHistory()
 
 const initialState = {
   balance: 0,
+  urlId: 0,
   urlList: [],
+  submittingUrl:'',
   initialized: false
 }
 

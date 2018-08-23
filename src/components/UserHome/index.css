@@ -1,0 +1,31 @@
+#big-box {
+  width:100%;
+  padding:24px;
+}
+
+#box {
+  float:left;
+  background-color: #B3B3B3;
+  padding: 24px;
+  margin: 12px;
+  width: 30%;
+  height:200px;
+  position:relative;
+}
+
+#title {
+  font-size: 30px
+}
+
+#button {
+  float: right;
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+}
+
+#list {
+  float: left;
+  width: 45%;
+  padding-right: 24px;
+}
