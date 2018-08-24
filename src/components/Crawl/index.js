@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import SubmitModal from '../SubmitModal'
-import UrlList from '../List'
+import SubmitModal from './SubmitModal'
+import UrlList from './List'
 
 import './index.css'
 

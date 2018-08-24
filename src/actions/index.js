@@ -15,3 +15,21 @@ export const submittingUrl = (url) => {
               }
   };
 }
+
+export const incTruth = (id) => {
+  return{
+    type: 'INC_TRUTH',
+    payload: {
+              id:id
+              }
+  }
+}
+
+export const incFake = (id) => {
+  return{
+    type: 'INC_FAKE',
+    payload: {
+              id:id
+              }
+  }
+}

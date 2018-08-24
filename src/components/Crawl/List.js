@@ -1,6 +1,5 @@
 import { List } from 'antd';
 import React, { Component } from 'react'
-import VoteButton from './VoteButton'
 
 export default class UrlList extends Component{
   render(){
@@ -11,8 +10,12 @@ export default class UrlList extends Component{
           size="small"
           bordered
           dataSource={data}
-          renderItem={item => (<List.Item>
-            <p id='url'>{item}</p>
+          renderItem={item => (
+            <List.Item>
+              <List.Item.Meta
+              description={<div>id:{item.id} vote:{item.vote} truth:{item.truth} fake:{item.fake}</div>}
+              />
+              <div id='url'>url:{item.url}</div>
             </List.Item>)}
         />
       </div>

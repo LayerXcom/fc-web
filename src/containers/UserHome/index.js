@@ -3,7 +3,8 @@ import UserHome from '../../components/UserHome'
 
 const mapStateToProps = state => {
   return {
-    urlList: state.urlList
+    urlList: state.urlList,
+    sortList: state.sortList
   }
 }
 

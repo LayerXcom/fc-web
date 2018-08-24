@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import './index.css'
 import { Button } from 'antd'
 import { Link } from 'react-router-dom'
-import UrlList from '../List'
+import UrlList from '../Crawl/List'
 
 export default class UserHome extends Component {
   render() {
@@ -43,7 +43,7 @@ export default class UserHome extends Component {
           </div>
           <div id='list'>
             <p id='title'>投票の多く集まっているURL</p>
-            <UrlList list={this.props.urlList}/>
+            <UrlList list={this.props.sortList}/>
           </div>
         </div>
       </div>

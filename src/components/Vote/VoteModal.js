@@ -1,7 +1,7 @@
 import { Modal, Button } from 'antd';
 import React from 'react';
 
-class VoteButton extends React.Component {
+class VoteModal extends React.Component {
   state = { visible: false }
 
   showModal = () => {
@@ -15,7 +15,7 @@ class VoteButton extends React.Component {
     this.setState({
       visible: false,
     });
-    return this.props.onClick();
+    return this.props.incTruth(this.props.id);
   }
 
   handleCancel = (e) => {
@@ -23,6 +23,7 @@ class VoteButton extends React.Component {
     this.setState({
       visible: false,
     });
+    return this.props.incFake(this.props.id);
   }
 
   render() {
@@ -38,6 +39,8 @@ class VoteButton extends React.Component {
           cancelText="Fake"
         >
           <p>地球は平面である</p>
+          <p>id:{this.props.id}</p>
+          <p>URL:{this.props.url}</p>
           <p>Deposit: 1 FCT</p>
         </Modal>
       </div>
@@ -45,4 +48,4 @@ class VoteButton extends React.Component {
   }
 }
 
-export default VoteButton
+export default VoteModal

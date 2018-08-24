@@ -24,6 +24,7 @@ const initialState = {
   balance: 0,
   urlId: 0,
   urlList: [],
+  sortList: [],
   submittingUrl:'',
   initialized: false
 }

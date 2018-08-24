@@ -4,14 +4,17 @@ import * as actions from  '../../actions/index'
 
 const mapStateToProps = state => {
   return {
-    urlList: state.urlList
+    urlList: state.urlList,
+    sortList: state.sortList,
+    url: state.submittingUrl
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-    addUrl: (url) => dispatch(actions.addUrl(url)),
+    incTruth: (id) => dispatch(actions.incTruth(id)),
+    incFake: (id) => dispatch(actions.incFake(id))
   }
 }
 
-export default connect(mapStateToProps,mapDispatchToProps)(Vote)
+export default connect(mapStateToProps, mapDispatchToProps)(Vote)
