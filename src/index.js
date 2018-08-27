@@ -21,7 +21,7 @@ import Login from './containers/Login'
 const history = createBrowserHistory()
 
 const initialState = {
-  balance: 0,
+  balance: 100,
   urlId: 0,
   urlList: [],
   sortList: [],

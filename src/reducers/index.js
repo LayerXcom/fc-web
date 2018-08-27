@@ -13,6 +13,7 @@ export default function reducer(state, action) {
       urlList.push(urlObj);
       sortList.push(urlObj);
       const newState = Object.assign({}, state);
+      newState.balance = newState.balance-10;
       newState.urlList = urlList;
       newState.sortList = sortList;
       newState.urlId++
@@ -32,6 +33,7 @@ export default function reducer(state, action) {
                           return 0;
                       });
       const newnewnewState = Object.assign({}, state);
+      newnewnewState.balance = newnewnewState.balance-1;
       newnewnewState.urlList = newurlList;
       newnewnewState.sortList = newsortList;
       return newnewnewState;
@@ -46,6 +48,7 @@ export default function reducer(state, action) {
                           return 0;
                       });
       const newnewnewnewState = Object.assign({}, state);
+      newnewnewnewState.balance = newnewnewnewState - 1;
       newnewnewnewState.urlList = newnewurlList;
       newnewnewnewState.sortList = newnewsortList;
       return newnewnewnewState;

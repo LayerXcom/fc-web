@@ -34,6 +34,7 @@ export default class UserHome extends Component {
 
         <div id='big-box'>
           <p id='title'>Reward</p>
+          <p>TTL: {this.props.balance} FCT</p>
         </div>
 
         <div id='big-box'>
